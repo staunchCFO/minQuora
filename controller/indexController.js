@@ -65,11 +65,16 @@ class App {
             
     }
     getSingleArticle = async (req , res , next) => {
-        let article = await Article.findOne({title : req.params.article})
-        if(article){
-            let user = await Customer.findOne({_id : article.author})
-            res.render('article' , { article : article, user : user})
+        if(req.session.email){
+            let article = await Article.findOne({title : req.params.article})
+            if(article){
+                let user = await Customer.findOne({_id : article.author})
+                res.render('article' , { article : article, user : user})
+            }
+            }else{
+                res.send('Article not edited')
         }
+        
 	}
     getEditArticle = async (req , res , next) => {
         if(req.session.email){
