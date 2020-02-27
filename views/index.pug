@@ -4,15 +4,15 @@ block content
     div(class='container')
       div(class='row')
         div(class='col-md-2 mt-5')
-          h6 Feed
+          h6.text-white Feed
         div(class='col-md-8')
-          h2.pt-4 #{title}
-          p Welcome To minQuora, your best fit for informative articles
+          h2.pt-4.text-white #{title}
+          p.text-white Welcome To minQuora, your best fit for informative articles
             ul.list-group
               each article, i in articles
                 li.list-group-item
                   -let articleUrl = article.article
                   a(href=articleUrl)=article.title
         div(class='col-md-2 mt-5')
-          h6 Improve your feed
+          h6.text-white Improve your feed
     

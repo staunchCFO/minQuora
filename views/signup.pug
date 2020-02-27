@@ -7,32 +7,35 @@ block content
         div(class="container")
             div(class="row justify-content-center")
                 div(class='col-md-6 mt-5')
-                    h1(class='h_cta') Best article platform: <br> minQuora
-                    p(class='p_cta mt-4') A place to share knowledge and better understand the world Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati ullam repudiandae, nihil vitae, magni vel voluptatum consequatur veniam minima accusantium asperiores. Dolorem nam minima facilis expedita, laborum hic deleniti.
+                    h1(class='h_cta text-white mt-5') Best article platform: <br> minQuora
+                    p(class='p_cta mt-4 text-white') A place to share knowledge and better understand the world Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati ullam repudiandae, nihil vitae, magni vel voluptatum consequatur veniam minima accusantium asperiores. Dolorem nam minima facilis expedita, laborum hic deleniti.
                 div(class="col-md-6 mt-5")
-                    h4(class="text-center pt-2 pb-2 try-button bg-dark text-white") Sign Up for free!
+                    a(href="/auth/google" class='btn google-btn bg-danger text-white mb-2 pt-3') Signup with Google
+                    p(class="text-center text-white") OR
                     div(class="sign-up-form shadow p5-2 pr-5 mb-2 pl-5")
                         form(method="POST")
                             if errors 
                                 each error in errors 
                                     p(class='feedback-error')!=  error.msg
-                            input(type="text" class="form-control" placeholder="First Name" id="first_name" name="first_name" required)
+                            input(type="text" class="l" placeholder="First Name" id="first_name" name="first_name" required)
                             p(class="firstname-feedback")
-                            input(type="text" class="form-control" placeholder="Last Name" id="last_name" name="last_name" required)
+                            input(type="text" class="" placeholder="Last Name" id="last_name" name="last_name" required)
                             p(class="lastname-feedback")
-                            input(type="email" class="form-control" placeholder="Email" id="email" name="email" required)
+                            input(type="email" class="" placeholder="Email" id="email" name="email" required)
                             p(class="email-feedback")
-                            input(type="password" class="form-control" placeholder="Password" id="password" name="password" required)
+                            input(type="password" class="" placeholder="Password" id="password" name="password" required)
                             p(class="password-feedback")
-                            input(type="password" class="form-control" placeholder="Confirm Password" id="cPassword" name="cPassword" required)
+                            input(type="password" class="" placeholder="Confirm Password" id="cPassword" name="cPassword" required)
                             p(class="cpassword-feedback")
-                            input(type="checkbox" id="check")
-                            span(class="pl-2 terms-conditions") I have read the  
-                              a(href='#') Terms and Conditions
+                            label.remember-me.space(for='')
+                                span.checkbox
+                                    input(type='checkbox' id="check")
+                                    span.checked
+                                |   Kindly accept our 
+                                a(href='#' class="forgot") Terms and Conditions
                             div(class="text-center pt-1")
-                                button(type="submit" class="claim-button mt-1 btn btn-primary" id="submit") Sign up
+                                button(type="submit" class="login-btn mt-1 btn btn-primary" id="submit") Sign up
                                 p(class="on-submit")
-                                a(href="/auth/google" class='btn claim-button bg-danger text-white mb-5') Continue with Google
 
         script(src="/javascripts/signup.js" type="module")
         include includes/footer.pug
