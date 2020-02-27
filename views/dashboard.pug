@@ -1,0 +1,13 @@
+include includes/header.pug
+
+block content
+    .container
+        if message 
+            h1 #{message}
+        if articles
+            ul.list-group
+              each article in articles
+                li.list-group-item
+                  -let articleUrl = "/articles/edit" + article.single
+                  a(href=articleUrl)=article.title
+    

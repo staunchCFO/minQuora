@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(class='container')
+      div(class='row')
+        div(class='col-md-2 mt-5')
+          h6 Feed
+        div(class='col-md-8')
+          h2.pt-4 #{title}
+          p Welcome To minQuora, your best fit for informative articles
+            ul.list-group
+              each article, i in articles
+                li.list-group-item
+                  -let articleUrl = article.article
+                  a(href=articleUrl)=article.title
+        div(class='col-md-2 mt-5')
+          h6 Improve your feed
+    

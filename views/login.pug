@@ -1,0 +1,28 @@
+extends layout
+
+block content
+   div(class="register")
+        div(class="container")
+            div(class="row justify-content-center")
+                div(class="col-md-6")
+                    h4(class="text-center pt-2 pb-2 try-button bg-dark text-white mt-5") Welcome Back!!!
+                    div(class="shadow sign-up-form mt-5 pl-3 pr-3")
+                        form(method="POST")
+                            if error 
+                                p.error  #{error}
+                            input(type="text" class="form-control mb-3" placeholder="Email" id="email" name="email" required)
+                            input(type="password" class="form-control mb-3" placeholder="Password" id="password" name="password" required)
+                            div(class="float-left")
+                                input(type="checkbox")
+                                span(class='terms-conditions') Remember Me
+                            div(class="float-right")
+                                a(href="#") Forgot Password?
+                            div(class="clearfix")
+                            div(class="text-center pt-1")
+                                button(type="submit" class="claim-button mt-1 btn btn-primary" id="submit") Log In
+                                p(class="on-submit")
+                                a(href="/auth/google" class='btn claim-button bg-danger text-white mb-5') Continue with Google
+
+        script(src="/javascripts/active/login.js")
+        script(src='/javascripts/form.js')
+        include includes/footer.pug

@@ -1,0 +1,19 @@
+include includes/header.pug
+
+block content
+    body
+      div.container
+        div.row
+          div.col-md-2
+          div.col-md-8
+            h1.mt-4 Add your article
+            form(method='POST' , action='/articles/add')
+              #form-group
+                label Title:
+                input.form-control(name='title' , type='text')
+              #form-group
+                label Body:
+                textarea.form-control(name='body')
+              input.mt-4.btn.btn-dark(type='submit' , value='Submit')
+          div.col-md-2
+        

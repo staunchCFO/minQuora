@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Knowldege based app
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet")
+    link(rel='stylesheet' , href='/plugins/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet' , href='/plugins/fontawesome/css/font-awesome.min.css')
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.pt-3.pb-3
+      a.navbar-brand.ml-5.text-white minQuora
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/dashboard')
+              | Dashboard 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/articles/add' class="text-white") Add Article
+        ul.navbar-nav.ml-3.mr-3
+          li.nav-item
+            a.nav-link.text-white(href='/logout') Log Out
+
+    .container
+      != messages('message', locals)
+      block content
+      
+      
+    
+    script(src="/javascripts/jquery.min.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/js/main.js")

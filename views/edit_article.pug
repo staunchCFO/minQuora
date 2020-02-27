@@ -1,0 +1,21 @@
+include includes/header.pug
+
+block content
+  div.container
+    h1.pt-4 #{title}
+    form(method='POST')
+      #form-group
+        label Title:
+        input.form-control(name='title' , type='text', value=article.title disabled="disabled")
+      #form-group
+        label Author:
+        -let userID = `${user.firstName} ${user.lastName}`
+        input.form-control(name='author' , type='text', value=userID disabled="disabled")
+      #form-group
+        label Body:
+        textarea.form-control(name='body' , type='text')=article.body
+      input.mt-4.btn.btn-primary(type='submit' , value='Edit')
+      div(class="float-right")
+        -let deleteUrl = "/articles/delete" + article.single
+        a.btn.btn-danger.delete-article.mt-4(href=deleteUrl , data-id=article._id) Delete
+        
